@@ -1,0 +1,10 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: default  # Specify the namespace
+  name: developer-role    # Name of the Role
+rules:
+- apiGroups: ["apps", ""]     # "" indicates the core API group
+  resources: ["deployments", "pods", "replicasets"] # Resources this role applies to
+  verbs: ["get", "watch", "list", "create", "update", "delete"] # Actions permitted
+

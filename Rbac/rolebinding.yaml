@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: development-binding  # Name of the RoleBinding       # Namespace where this binding applies
+subjects:
+- kind: User               # Can be User, Group, or ServiceAccount
+  name: "developer"             # Name of the user, group, or service account
+  apiGroup: ""
+roleRef:
+  kind: Role               # Reference to a Role or ClusterRole
+  name: developer-role         # Name of the Role this binding applies to
+  apiGroup: ""
